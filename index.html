@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>presentation slides</title>
+<title>Scalable Geospatial Data Science - Nikolai Janakiev</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,21 +13202,64 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scalable-Geospatial-Data-Science">Scalable Geospatial Data Science<a class="anchor-link" href="#Scalable-Geospatial-Data-Science">&#182;</a></h1><h3 id="Nikolai-Janakiev-@njanakiev">Nikolai Janakiev <a href="https://github.com/njanakiev">@njanakiev</a><a class="anchor-link" href="#Nikolai-Janakiev-@njanakiev">&#182;</a></h3>
+<h1 id="Scalable-Geospatial-(Vector)-Data-Science">Scalable Geospatial (Vector) Data Science<a class="anchor-link" href="#Scalable-Geospatial-(Vector)-Data-Science">&#182;</a></h1><h3 id="Nikolai-Janakiev-@njanakiev">Nikolai Janakiev <a href="https://github.com/njanakiev">@njanakiev</a><a class="anchor-link" href="#Nikolai-Janakiev-@njanakiev">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Postgres-and-PostGIS">Postgres and PostGIS<a class="anchor-link" href="#Postgres-and-PostGIS">&#182;</a></h1>
+<h1 id="(Geospatial)-Big-Data">(Geospatial) Big Data<a class="anchor-link" href="#(Geospatial)-Big-Data">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Parallelization">Parallelization<a class="anchor-link" href="#Parallelization">&#182;</a></h3>
+<h3 id="OpenStreetMap">OpenStreetMap<a class="anchor-link" href="#OpenStreetMap">&#182;</a></h3><ul>
+<li><strong>6,140,639,049</strong> nodes</li>
+<li><strong>677,822,881</strong> ways</li>
+<li><strong>7,940,285</strong> relations</li>
+</ul>
+<p><a href="https://www.openstreetmap.org/stats/data_stats.html">www.openstreetmap.org/stats/data_stats.html</a></p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="assets/postgresql.jpeg" alt="PostgreSQL"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="PostgreSQL-and-PostGIS">PostgreSQL and PostGIS<a class="anchor-link" href="#PostgreSQL-and-PostGIS">&#182;</a></h1>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PostgreSQL-Parallelization">PostgreSQL Parallelization<a class="anchor-link" href="#PostgreSQL-Parallelization">&#182;</a></h3><ul>
+<li>Since <strong>PostgreSQL 9.6</strong> (2016)</li>
+<li>Enabled by default since <strong>PostgreSQL 10</strong> (2017)</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PostGIS-Parallelization">PostGIS Parallelization<a class="anchor-link" href="#PostGIS-Parallelization">&#182;</a></h3><ul>
+<li>With tweaks since <strong>PostgreSQL 11</strong> and <strong>PostGIS 2.5</strong> </li>
+<li>Out of the box since <strong>Postgres 12</strong> and <strong>PostGIS 3</strong></li>
+</ul>
+
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -13230,7 +13273,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Columnar-Storage">Columnar Storage<a class="anchor-link" href="#Columnar-Storage">&#182;</a></h3><ul>
+<h3 id="Columnar-Storage-(Foreign-Data-Wrapper)">Columnar Storage (Foreign Data Wrapper)<a class="anchor-link" href="#Columnar-Storage-(Foreign-Data-Wrapper)">&#182;</a></h3><ul>
 <li>cstore_fdw - <a href="https://citusdata.github.io/cstore_fdw/">citusdata.github.io/cstore_fdw/</a></li>
 </ul>
 
@@ -13250,7 +13293,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Distributed-Postgres">Distributed Postgres<a class="anchor-link" href="#Distributed-Postgres">&#182;</a></h3><ul>
+<h3 id="Distributed-PostgreSQL">Distributed PostgreSQL<a class="anchor-link" href="#Distributed-PostgreSQL">&#182;</a></h3><ul>
 <li>CitusDB - <a href="https://github.com/citusdata/citus">github.com/citusdata/citus</a></li>
 <li>Postgres-XL - <a href="https://www.postgres-xl.org/">www.postgres-xl.org</a></li>
 </ul>
@@ -13261,75 +13304,122 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Big-Data">Big Data<a class="anchor-link" href="#Big-Data">&#182;</a></h1>
+<p><img src="assets/hadoop.png" alt="Hadoop"></p>
+
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hadoop-YARN">Hadoop YARN<a class="anchor-link" href="#Hadoop-YARN">&#182;</a></h2>
+<h1 id="Big-Data">Big Data<a class="anchor-link" href="#Big-Data">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hadoop-Distributed-File-System">Hadoop Distributed File System<a class="anchor-link" href="#Hadoop-Distributed-File-System">&#182;</a></h2>
+<ul>
+<li><strong>2003</strong> Google - <a href="https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">The Google File System</a></li>
+</ul>
+
 </div>
 </div>
 </div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>2004</strong> Google - <a href="https://static.usenix.org/publications/library/proceedings/osdi04/tech/full_papers/dean/dean.pdf">MapReduce: Simplified Data Processing on Large Clusters</a></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>2006</strong> Apache Nuts - Hadoop</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>2008</strong> Apache Foundation Project</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hadoop-Distributed-File-System-(HDFS)">Hadoop Distributed File System (HDFS)<a class="anchor-link" href="#Hadoop-Distributed-File-System-(HDFS)">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Hadoop-MapReduce">Hadoop MapReduce<a class="anchor-link" href="#Hadoop-MapReduce">&#182;</a></h2>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hadoop-YARN">Hadoop YARN<a class="anchor-link" href="#Hadoop-YARN">&#182;</a></h2>
+</div>
+</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Apache-Spark">Apache Spark<a class="anchor-link" href="#Apache-Spark">&#182;</a></h1><ul>
-<li>distributed computation engine</li>
-<li>written in Scala, with bindings for Java, Python, and R</li>
-</ul>
+<h1 id="GeoMesa">GeoMesa<a class="anchor-link" href="#GeoMesa">&#182;</a></h1><p><a href="https://www.geomesa.org/">geomesa.org</a></p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="GeoMesa">GeoMesa<a class="anchor-link" href="#GeoMesa">&#182;</a></h1><ul>
-<li>Accumulo<ul>
-<li>HBase</li>
-<li>Cassandra</li>
-<li></li>
-</ul>
-</li>
-<li>Spark, Spark SQL</li>
-<li>Spatial Indexing<ul>
-<li>Space Filling Curve</li>
-</ul>
-</li>
+<h3 id="Spatial-Indexing">Spatial Indexing<a class="anchor-link" href="#Spatial-Indexing">&#182;</a></h3><ul>
+<li>2d/3d Space Filling Curve</li>
 </ul>
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="LocationTech">LocationTech<a class="anchor-link" href="#LocationTech">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GeoWave">GeoWave<a class="anchor-link" href="#GeoWave">&#182;</a></h2><ul>
-<li>Java</li>
-<li>N-Dimensional Hilbert Curve</li>
+<h3 id="Database">Database<a class="anchor-link" href="#Database">&#182;</a></h3><ul>
+<li><a href="https://accumulo.apache.org/">Apache Accumulo</a></li>
+<li><a href="https://hbase.apache.org/">Apache HBase</a></li>
+<li><a href="https://cassandra.apache.org/">Apache Cassandra</a></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="LocationTech">LocationTech<a class="anchor-link" href="#LocationTech">&#182;</a></h1><p><a href="https://projects.eclipse.org/projects/locationtech">projects.eclipse.org/projects/locationtech</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://locationtech.github.io/geowave/">GeoWave</a></li>
 </ul>
 
 </div>
@@ -13338,12 +13428,28 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GeoTrellis">GeoTrellis<a class="anchor-link" href="#GeoTrellis">&#182;</a></h2><ul>
-<li>Scala</li>
-<li>Rasters, Point Cloud, Vector/Vector Tiles</li>
-<li>Spark</li>
-<li>Accumulo</li>
-<li>Cassandra</li>
+<ul>
+<li><a href="https://geotrellis.io/">GeoTrellis</a></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://rasterframes.io/">RasterFrames</a></li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://locationtech.github.io/jts/">JTS Topology Suite</a></li>
 </ul>
 
 </div>
@@ -13352,58 +13458,177 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="GeoSpark">GeoSpark<a class="anchor-link" href="#GeoSpark">&#182;</a></h1>
+<h1 id="Beyond-the-Elephants">Beyond the Elephants<a class="anchor-link" href="#Beyond-the-Elephants">&#182;</a></h1>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Presto">Presto<a class="anchor-link" href="#Presto">&#182;</a></h1>
+<h1 id="Presto">Presto<a class="anchor-link" href="#Presto">&#182;</a></h1><p><a href="https://prestodb.io/">prestodb.io</a></p>
+<ul>
+<li>Distributed SQL Query Engine for Big Data</li>
+</ul>
+
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Beyond-the-Elephant">Beyond the Elephant<a class="anchor-link" href="#Beyond-the-Elephant">&#182;</a></h1>
+<ul>
+<li><a href="https://prestodb.io/docs/current/connector.html">Presto Connectors</a> - connectors to most common SQL and NoSQL databases</li>
+</ul>
+
 </div>
 </div>
-</div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dask-and-GeoPandas">Dask and GeoPandas<a class="anchor-link" href="#Dask-and-GeoPandas">&#182;</a></h1>
+<ul>
+<li><a href="https://prestodb.io/docs/current/functions/geospatial.html">Geospatial Functions</a> - various common <code>ST_</code> functions available </li>
+</ul>
+
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Dask">Dask<a class="anchor-link" href="#Dask">&#182;</a></h1><p><a href="https://dask.org/">dask.org</a></p>
+<ul>
+<li>parallel and distributed computing library for analytics written in Python</li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="GeoPandas">GeoPandas<a class="anchor-link" href="#GeoPandas">&#182;</a></h1><p><a href="https://geopandas.org/">geopandas.org</a></p>
+<ul>
+<li>xtends the datatypes used by pandas to allow spatial operations on geometric types</li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="ElasticSearch">ElasticSearch<a class="anchor-link" href="#ElasticSearch">&#182;</a></h1>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="MongoDB">MongoDB<a class="anchor-link" href="#MongoDB">&#182;</a></h1>
+<h3 id="Geo-Point-Indexing">Geo Point Indexing<a class="anchor-link" href="#Geo-Point-Indexing">&#182;</a></h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html">Geo-point datatype</a></p>
+<ul>
+<li>BKD-trees</li>
+<li>2019 - <a href="https://www.elastic.co/blog/bkd-backed-geo-shapes-in-elasticsearch-precision-efficiency-speed">BKD-backed geo_shapes in Elasticsearch: precision + efficiency + speed</a></li>
+</ul>
+
 </div>
 </div>
-</div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Redis">Redis<a class="anchor-link" href="#Redis">&#182;</a></h1>
+<h3 id="Geo-Queries">Geo Queries<a class="anchor-link" href="#Geo-Queries">&#182;</a></h3><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-queries.html">ElasticSearch - Geo queries</a></p>
+<ul>
+<li><code>geo_bounding_box</code> query</li>
+<li><code>geo_distance</code> query</li>
+<li><code>geo_polygon</code> query</li>
+<li><code>geo_shape</code> query</li>
+</ul>
+
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MongoDB">MongoDB<a class="anchor-link" href="#MongoDB">&#182;</a></h1><ul>
+<li><a href="https://www.mongodb.com/">mongodb.com</a></li>
+<li>Supports <a href="https://docs.mongodb.com/manual/reference/geojson/">GeoJSON Object</a></li>
+</ul>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Geospatial-Index">Geospatial Index<a class="anchor-link" href="#Geospatial-Index">&#182;</a></h3><ul>
+<li><a href="https://docs.mongodb.com/manual/core/2d/">2d Index</a>, <a href="https://docs.mongodb.com/manual/core/geospatial-indexes/">2d Index Internals</a> - Uses GeoHash Indexing</li>
+<li><a href="https://docs.mongodb.com/manual/core/2dsphere/">2d Sphere Index</a></li>
+<li><a href="https://docs.mongodb.com/manual/core/geohaystack/">geoHaystack Indexes</a> - Special index that is optimized to return results over small areas</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Geospatial-Queries">Geospatial Queries<a class="anchor-link" href="#Geospatial-Queries">&#182;</a></h3><ul>
+<li><code>$geoIntersects</code></li>
+<li><code>$geoWithin</code></li>
+<li><code>$near</code></li>
+<li><code>$nearSphere</code></li>
+<li><code>$geoNear</code></li>
+</ul>
+<p><a href="https://docs.mongodb.com/manual/geospatial-queries/">Geospatial Queries</a></p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Redis">Redis<a class="anchor-link" href="#Redis">&#182;</a></h1><p><a href="https://redis.io/">redis.io</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>in-memory data structure store, used as a database, cache and message broker</li>
+<li>Lyft 10 million QPS</li>
+<li><a href="https://en.wikipedia.org/wiki/Geohash">Geohash</a> Indexing</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Geospatial-Commands">Geospatial Commands<a class="anchor-link" href="#Geospatial-Commands">&#182;</a></h3><ul>
+<li><a href="https://redis.io/commands/geoadd">GEOADD</a></li>
+<li><a href="https://redis.io/commands/geohash">GEOHASH</a></li>
+<li><a href="https://redis.io/commands/geodist">GEODIST</a></li>
+<li><a href="https://redis.io/commands/georadius">GEORADIUS</a></li>
+<li><a href="https://redis.io/commands/georadiusbymember">GEORADIUSBYMEMBER</a></li>
+</ul>
+<p><a href="https://redislabs.com/redis-best-practices/indexing-patterns/geospatial/">Redis Best Practices - Geospatial</a></p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Scalable-Geospatial-Data-Science">Scalable Geospatial Data Science<a class="anchor-link" href="#Scalable-Geospatial-Data-Science">&#182;</a></h1><h3 id="Nikolai-Janakiev-@njanakiev">Nikolai Janakiev <a href="https://github.com/njanakiev">@njanakiev</a><a class="anchor-link" href="#Nikolai-Janakiev-@njanakiev">&#182;</a></h3><ul>
 <li>Slides - <a href="https://janakiev.com/scalable-geospatial-data-science">janakiev.com/scalable-geospatial-data-science</a></li>
 <li>Benchmark (2017) - <a href="https://www.reply.com/en/topics/big-data-and-analytics/Shared%20Documents/DSTL-Report-Data-Reply-2017.pdf">Benchmarking of Big Data Technologies for Ingesting and Querying Geospatial Datasets</a></li>
+<li>MDPI 2020 - <a href="https://www.mdpi.com/2220-9964/9/5/331/pdf">State-of-the-Art Geospatial Information Processing inNoSQL Databases</a></li>
+<li><a href="https://tech.marksblogg.com/benchmarks.html">Summary of the 1.1 Billion Taxi Rides Benchmarks</a></li>
 </ul>
 
 </div>
