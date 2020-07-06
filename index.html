@@ -13260,7 +13260,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PostGIS-Parallelization">PostGIS Parallelization<a class="anchor-link" href="#PostGIS-Parallelization">&#182;</a></h3><ul>
 <li>With tweaks since <strong>PostgreSQL 11</strong> and <strong>PostGIS 2.5</strong> </li>
-<li>Out of the box since <strong>Postgres 12</strong> and <strong>PostGIS 3</strong></li>
+<li>Out of the box since <strong>PostgreSQL 12</strong> and <strong>PostGIS 3</strong></li>
 </ul>
 
 </div>
@@ -13315,14 +13315,14 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Big-Data">Big Data<a class="anchor-link" href="#Big-Data">&#182;</a></h1>
+<h1 id="Apache-Hadoop">Apache Hadoop<a class="anchor-link" href="#Apache-Hadoop">&#182;</a></h1>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h3 id="Hadoop-Distributed-File-System-(HDFS)">Hadoop Distributed File System (HDFS)<a class="anchor-link" href="#Hadoop-Distributed-File-System-(HDFS)">&#182;</a></h3><ul>
 <li><strong>2003</strong> Google - <a href="https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">The Google File System</a></li>
 </ul>
 
@@ -13332,7 +13332,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<h3 id="Hadoop-MapReduce">Hadoop MapReduce<a class="anchor-link" href="#Hadoop-MapReduce">&#182;</a></h3><ul>
 <li><strong>2004</strong> Google - <a href="https://static.usenix.org/publications/library/proceedings/osdi04/tech/full_papers/dean/dean.pdf">MapReduce: Simplified Data Processing on Large Clusters</a></li>
 </ul>
 
@@ -13342,51 +13342,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>2006</strong> Apache Nutch - Hadoop</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>2007</strong> Used by Facebook, LinkedIn, Twitter, among others</li>
-</ul>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><strong>2008</strong> Apache Foundation Project</li>
-</ul>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hadoop-Distributed-File-System-(HDFS)">Hadoop Distributed File System (HDFS)<a class="anchor-link" href="#Hadoop-Distributed-File-System-(HDFS)">&#182;</a></h2>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hadoop-MapReduce">Hadoop MapReduce<a class="anchor-link" href="#Hadoop-MapReduce">&#182;</a></h2>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hadoop-YARN">Hadoop YARN<a class="anchor-link" href="#Hadoop-YARN">&#182;</a></h2>
+<h3 id="Hadoop-YARN">Hadoop YARN<a class="anchor-link" href="#Hadoop-YARN">&#182;</a></h3>
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -13426,7 +13382,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Integrations">Integrations<a class="anchor-link" href="#Integrations">&#182;</a></h3><ul>
-<li>Apache Spark</li>
+<li><a href="http://spark.apache.org/">Apache Spark</a> RDD/SQL Interface</li>
 <li>GeoServer Integration</li>
 </ul>
 
@@ -13464,7 +13420,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="https://prestodb.io/docs/current/functions/geospatial.html">Geospatial Functions</a> - various common <code>ST_</code> functions available </li>
+<li><a href="https://prestodb.io/docs/current/functions/geospatial.html">Geospatial Functions</a> - various common <code>ST_</code> functions available, uses <strong>RTree</strong> indexing <a href="https://github.com/prestodb/presto/pull/13079">Issue #13079</a> for spatial joins</li>
 </ul>
 
 </div>
@@ -13489,6 +13445,26 @@ a.anchor-link {
 
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://github.com/Toblerity/rtree">rtree</a> - Spatial index for Python GIS</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>(Experimental) <a href="https://github.com/jsignell/dask-geopandas">dask-geopandas</a> - New implementation of geopandas and dask </li>
+</ul>
+
+</div>
+</div>
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13501,8 +13477,7 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Geo-Point-Indexing"><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geo-point.html">Geo Point Indexing</a><a class="anchor-link" href="#Geo-Point-Indexing">&#182;</a></h3><ul>
-<li>BKD-trees</li>
-<li>2019 - <a href="https://www.elastic.co/blog/bkd-backed-geo-shapes-in-elasticsearch-precision-efficiency-speed">BKD-backed geo_shapes in Elasticsearch: precision + efficiency + speed</a></li>
+<li>BKD-trees - <a href="https://www.elastic.co/blog/bkd-backed-geo-shapes-in-elasticsearch-precision-efficiency-speed">BKD-backed geo_shapes in Elasticsearch: precision + efficiency + speed</a> (2019)</li>
 </ul>
 
 </div>
