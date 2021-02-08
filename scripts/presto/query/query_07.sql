@@ -4,8 +4,8 @@ EXPLAIN ANALYZE SELECT
   points.lat,
   points.lon
 FROM 
-  gdelt_parquet_inserted_2020 AS points,
-  ne_110_countries_parquet AS countries
+  hive.default.gdelt_parquet AS points,
+  hive.default.ne_110_countries_parquet AS countries
 WHERE 
   countries.iso_a2 = 'AT'
   AND ST_Contains(ST_GeomFromBinary(countries.geometry), 

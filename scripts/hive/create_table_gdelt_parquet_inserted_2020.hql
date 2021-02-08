@@ -10,7 +10,7 @@
 DROP TABLE IF EXISTS gdelt_parquet_inserted_2020;
 
 CREATE EXTERNAL TABLE gdelt_parquet_inserted_2020 (
-    `event_id`        BIGINT,
+    `event_id`        BIGINT,I need to find I need to find 
     `date`            DATE,
     `event_date`      DATE,
     `event_code`      INT,

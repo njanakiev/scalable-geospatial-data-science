@@ -3,12 +3,12 @@ EXPLAIN ANALYZE WITH countries AS (
     ne_id, 
     ST_GeomFromBinary(geometry) AS geometry
   FROM 
-    ne_110_countries_parquet
+    hive.default.ne_110_countries_parquet
 ), points AS (
   SELECT 
     ST_Point(lon, lat) AS point 
   FROM 
-    gdelt_parquet_inserted_2020
+    hive.default.gdelt_parquet
 )
 
 SELECT 
