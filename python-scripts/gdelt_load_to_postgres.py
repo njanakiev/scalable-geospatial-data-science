@@ -5,6 +5,9 @@ import sqlalchemy
 from geoalchemy2 import Geometry, WKTElement
 from shapely.geometry import Point
 from sqlalchemy.engine.url import URL
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def convert_geometry(lon, lat):
@@ -13,7 +16,8 @@ def convert_geometry(lon, lat):
     else:
         return WKTElement(Point(lon, lat).wkt, srid=4326)
 
-def load_to_postgis(filepath, connection_uri, table_name='table', chunksize=10**5):
+
+def load_to_postgis(filepath, connection_uri, table_name, chunksize=10**5):
     engine = sqlalchemy.create_engine(connection_uri)
 
     with engine.connect() as connection:
@@ -42,7 +46,7 @@ if __name__ == '__main__':
         'port':       os.environ['POSTGRES_PORT'],
         'username':   os.environ['POSTGRES_USER'],
         'password':   os.environ['POSTGRES_PASS'],
-        'database':   "sgds"
+        'database':   os.environ['POSTGRES_DB']
     }
     
     connection_uri = str(URL(**credentials))
