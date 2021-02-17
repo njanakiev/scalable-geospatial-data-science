@@ -8,6 +8,9 @@ LOG_FILEPATH=log/presto_queries_0.247_s.log
 STATS_FILEPATH=log/presto_stats_0.247_s.csv
 RUNTIME=presto
 
+export GDELT_TABLE_NAME=hive.default.gdelt_parquet
+export NE_TABLE_NAME=hive.default.ne_110_countries_parquet
+
 # Run warmup queries
 time $RUNTIME \
   --file warmup.sql \
@@ -21,11 +24,11 @@ for filepath in query/*.sql; do
   echo "$filepath" | \
     tee --append $LOG_FILEPATH
   
+  query=$(envsubst < $filepath)
+  
   start=$(date +%s.%N)
   $RUNTIME \
-    --file $filepath \
-    --catalog hive \
-    --schema default \
+    --execute "${query}" \
     --client-tags $filepath | \
     tee --append $LOG_FILEPATH
   end=$(date +%s.%N)

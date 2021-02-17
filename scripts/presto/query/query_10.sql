@@ -4,13 +4,13 @@ EXPLAIN ANALYZE WITH countries AS (
     iso_a2,
     ST_GeomFromBinary(geometry) AS geometry
   FROM 
-    hive.default.ne_110_countries_parquet
+    ${NE_TABLE_NAME}
 ), points AS (
    SELECT
      event_root_code, 
      ST_Point(lon, lat) AS point
    FROM 
-    hive.default.gdelt_parquet
+     ${GDELT_TABLE_NAME}
 )
 
 SELECT 

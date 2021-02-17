@@ -3,7 +3,8 @@ EXPLAIN ANALYZE SELECT
   event_root_code, 
   lat,
   lon
-FROM hive.default.gdelt_parquet
+FROM 
+  ${GDELT_TABLE_NAME}
 WHERE (event_date BETWEEN DATE '2010-01-01' AND DATE '2021-01-01')
   AND ST_Intersects(
     ST_Point(lon, lat), 
