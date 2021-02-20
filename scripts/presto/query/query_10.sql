@@ -6,11 +6,12 @@ EXPLAIN ANALYZE WITH countries AS (
   FROM 
     ${NE_TABLE_NAME}
 ), points AS (
-   SELECT
-     event_root_code, 
-     ST_Point(lon, lat) AS point
-   FROM 
-     ${GDELT_TABLE_NAME}
+  SELECT
+    event_root_code, 
+    ST_Point(lon, lat) AS point
+  FROM 
+    ${GDELT_TABLE_NAME}
+  WHERE (-85 < lat) AND (lat < 85)
 )
 
 SELECT 

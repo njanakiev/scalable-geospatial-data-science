@@ -40,11 +40,11 @@
 
     <property>
         <name>fs.s3a.access.key</name>
-        <value>[ACCESS KEY]</value>
+        <value>${S3_ACCESS_KEY}</value>
     </property>
     <property>
         <name>fs.s3a.secret.key</name>
-        <value>[SECRET KEY]</value>
+        <value>${S3_SECRET_KEY}</value>
     </property>
     <property>
         <name>fs.s3a.connection.ssl.enabled</name>
@@ -56,6 +56,6 @@
     </property>
     <property>
         <name>fs.s3a.endpoint</name>
-        <value>[URL TO ENDPOINT]</value>
+        <value>${S3_ENDPOINT}</value>
     </property>
 </configuration>

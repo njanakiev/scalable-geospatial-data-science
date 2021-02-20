@@ -6,6 +6,7 @@ EXPLAIN ANALYZE SELECT
 FROM 
   ${GDELT_TABLE_NAME}
 WHERE (event_date BETWEEN DATE '2010-01-01' AND DATE '2021-01-01')
+  AND (-85 < lat) AND (lat < 85)
   AND ST_Intersects(
     ST_Point(lon, lat), 
     ST_GeometryFromText(

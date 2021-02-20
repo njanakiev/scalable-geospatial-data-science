@@ -17,7 +17,7 @@ tar -xzvf trino-server-352.tar.gz
 sudo mv trino-server-352 $TRINO_HOME
 sudo chown $USER:$USER $TRINO_HOME
 
-if [ "$1" = "trino-cli" ]; then
+if [ "$1" = "cli" ]; then
   wget "https://repo1.maven.org/maven2/io/trino/trino-cli/352/trino-cli-352-executable.jar"
   mv trino-cli-352-executable.jar $TRINO_HOME/bin/trino
   sudo chmod +x $TRINO_HOME/bin/trino

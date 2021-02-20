@@ -7,5 +7,6 @@ EXPLAIN ANALYZE SELECT
               to_spherical_geography(ST_Point(lon, lat))) AS distance
 FROM 
   ${GDELT_TABLE_NAME}
+WHERE (-85 < lat) AND (lat < 85)
 ORDER BY 5 ASC
 LIMIT 100;

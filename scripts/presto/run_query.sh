@@ -4,18 +4,20 @@ set -e
 #STATS_FILEPATH=log/presto_stats_344.csv
 #LOG_FILEPATH=log/presto_queries_0.242_s.log
 #STATS_FILEPATH=log/presto_stats_0.242_s.csv
-LOG_FILEPATH=log/presto_queries_0.247_s.log
-STATS_FILEPATH=log/presto_stats_0.247_s.csv
-RUNTIME=presto
+#LOG_FILEPATH=log/presto_queries_0.247_s.log
+#STATS_FILEPATH=log/presto_stats_0.247_s.csv
+LOG_FILEPATH=log/presto_queries_linode_352.log
+STATS_FILEPATH=log/presto_stats_linode_352.csv
+RUNTIME=trino
 
-export GDELT_TABLE_NAME=hive.default.gdelt_parquet
-export NE_TABLE_NAME=hive.default.ne_110_countries_parquet
+export GDELT_TABLE_NAME=hive.gdelt.gdelt_parquet
+export NE_TABLE_NAME=hive.gdelt.ne_110_countries_parquet
 
 # Run warmup queries
 time $RUNTIME \
   --file warmup.sql \
   --catalog hive \
-  --schema default > /dev/null
+  --schema gdelt > /dev/null
 
 rm -f $LOG_FILEPATH
 echo "filepath,duration" > $STATS_FILEPATH

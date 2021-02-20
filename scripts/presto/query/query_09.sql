@@ -9,6 +9,7 @@ EXPLAIN ANALYZE WITH countries AS (
     ST_Point(lon, lat) AS point 
   FROM 
     ${GDELT_TABLE_NAME}
+  WHERE (-85 < lat) AND (lat < 85)
 )
 
 SELECT 

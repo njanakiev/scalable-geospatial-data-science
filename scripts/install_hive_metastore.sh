@@ -1,5 +1,26 @@
+set -e
+
+source .env
+
 METASTORE_HOME=/usr/local/metastore
 HADOOP_HOME=/usr/local/hadoop
+
+if [ "$1" = "mariadb" ]; then
+  # Install MariaDB
+  sudo apt update
+  sudo apt install -y mariadb-server
+  sudo systemctl enable mariadb.service
+  sudo systemctl start mariadb.service
+
+  # Prepare user and database
+  sudo mysql -u root -e "
+    DROP DATABASE IF EXISTS 'metastore'; 
+    CREATE DATABASE 'metastore';
+
+    CREATE USER 'hive'@localhost IDENTIFIED BY 'hive';
+    GRANT ALL PRIVILEGES ON *.* TO 'hive'@'localhost';
+    FLUSH PRIVILEGES;"
+fi
 
 # Download Hive Standalone Metastore
 wget "https://repo1.maven.org/maven2/org/apache/hive/hive-standalone-metastore/3.1.2/hive-standalone-metastore-3.1.2-bin.tar.gz"
@@ -22,6 +43,9 @@ cp $HADOOP_HOME/share/hadoop/tools/lib/aws-java-sdk-bundle-1.11.375.jar $METASTO
 # Download MySQL Connector
 wget "https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar" \
   --directory-prefix=$METASTORE_HOME/lib/
+
+envsubst < scripts/configuration/metastore-site.xml > \
+  $METASTORE_HOME/conf/metastore-site.xml
 
 $METASTORE_HOME/bin/schematool -initSchema -dbType mysql
 
