@@ -3,8 +3,7 @@ EXPLAIN ANALYZE SELECT
   COUNT(event_id) AS cnt
 FROM 
   ${GDELT_TABLE_NAME}
-WHERE
-  AND (-85 < lat) AND (lat < 85)
+WHERE (-85 < lat) AND (lat < 85)
   AND ST_Distance(to_spherical_geography(ST_Point(2.349014, 48.864716)),
                   to_spherical_geography(ST_Point(lon, lat))) < 10000
 GROUP BY 
