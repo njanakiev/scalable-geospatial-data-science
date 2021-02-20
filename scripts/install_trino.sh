@@ -6,11 +6,12 @@ TRINO_HOME=/usr/local/trino
 CORDINATOR=true
 
 sudo apt-get update
-sudo apt-get install openjdk-11-jdk-headless \
-                     openjdk-11-jre-headless \
-                     openjdk-11-jre \
-                     python-is-python3 \
-                     uuid
+sudo apt-get install -y 
+  openjdk-11-jdk-headless \
+  openjdk-11-jre-headless \
+  openjdk-11-jre \
+  python-is-python3 \
+  uuid
 
 wget "https://repo1.maven.org/maven2/io/trino/trino-server/352/trino-server-352.tar.gz"
 tar -xzvf trino-server-352.tar.gz
