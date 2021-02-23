@@ -3,7 +3,12 @@ set -e
 source .env
 
 METASTORE_HOME=/usr/local/metastore
-HADOOP_HOME=/usr/local/hadoop
+
+if [ -z "$HADOOP_HOME" ]; then
+  echo "HADOOP_HOME evnironment variable not set"
+  echo 'export HADOOP_HOME=/usr/local/hadoop' >> ~/.bashrc
+  export HADOOP_HOME=/usr/local/hadoop
+fi
 
 if [ "$1" = "mariadb" ]; then
   # Install MariaDB
@@ -14,8 +19,8 @@ if [ "$1" = "mariadb" ]; then
 
   # Prepare user and database
   sudo mysql -u root -e "
-    DROP DATABASE IF EXISTS 'metastore'; 
-    CREATE DATABASE 'metastore';
+    DROP DATABASE IF EXISTS metastore;
+    CREATE DATABASE metastore;
 
     CREATE USER 'hive'@localhost IDENTIFIED BY 'hive';
     GRANT ALL PRIVILEGES ON *.* TO 'hive'@'localhost';
